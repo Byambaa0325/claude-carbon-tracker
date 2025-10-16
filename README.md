@@ -14,6 +14,10 @@ A VSCode extension to track and visualize carbon emissions from Claude Code AI u
 - **Configurable emission factors** to adjust calculations
 - **Persistent tracking** across VSCode sessions
 
+The development of the plugin cost following amounts on Claude usage:
+ - Carbon Emissions: 0.0435 kg CO₂ | Tokens: 108,766 | Requests: 680
+ - Equivalent to making a cup of coffee
+
 ## Installation
 
 ### From Source
