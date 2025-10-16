@@ -1,0 +1,92 @@
+{
+  "name": "claude-carbon-tracker",
+  "displayName": "Claude Carbon Tracker",
+  "description": "Track and visualize carbon emissions from Claude Code AI usage with real-time monitoring",
+  "version": "0.1.1",
+  "publisher": "claude-carbon-tracker-dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/claude-carbon-tracker"
+  },
+  "keywords": [
+    "claude",
+    "carbon",
+    "emissions",
+    "sustainability",
+    "AI",
+    "environment",
+    "green AI",
+    "climate"
+  ],
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "claude-carbon-tracker.showStats",
+        "title": "Claude Carbon: Show Statistics"
+      },
+      {
+        "command": "claude-carbon-tracker.resetStats",
+        "title": "Claude Carbon: Reset Statistics"
+      },
+      {
+        "command": "claude-carbon-tracker.monitoringStatus",
+        "title": "Claude Carbon: Check Monitoring Status"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "claude-carbon-tracker",
+          "title": "Claude Carbon Tracker",
+          "icon": "resources/leaf.svg"
+        }
+      ]
+    },
+    "views": {
+      "claude-carbon-tracker": [
+        {
+          "id": "claudeCarbonStats",
+          "name": "Carbon Statistics"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Claude Carbon Tracker",
+      "properties": {
+        "claudeCarbonTracker.emissionFactor": {
+          "type": "number",
+          "default": 0.0004,
+          "description": "CO₂ emissions in kg per 1K tokens (default: 0.0004)"
+        },
+        "claudeCarbonTracker.showInStatusBar": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show carbon emissions in status bar"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.8.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/test-electron": "^2.5.2",
+    "typescript": "^5.9.3"
+  }
+}
