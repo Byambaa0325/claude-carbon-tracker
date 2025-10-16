@@ -55,6 +55,8 @@ Configure the extension in your VSCode settings:
 
 ### Data Collection Methodology
 
+**Note**: The token calculation and file watching methodology is adapted from [Claude Code Usage Monitor](https://github.com/Maciek-roboblog/Claude-Code-Usage-Monitor) by Maciek-roboblog.
+
 The extension monitors Claude Code's local conversation data stored in JSONL files:
 
 1. **File System Monitoring**: Scans Claude Code's data directory every 5 seconds
@@ -74,7 +76,7 @@ The extension monitors Claude Code's local conversation data stored in JSONL fil
 
 ### Emission Factor Methodology
 
-The default emission factor (0.0004 kg CO₂/1K tokens) is derived from recent research on LLM carbon footprint:
+The default emission factor (0.0004 kg CO₂/1K tokens) is derived from following research on LLM carbon footprint:
 
 #### Calculation Basis
 
@@ -135,6 +137,7 @@ Users can adjust the emission factor in settings based on their preferred assump
 
 - [x] Monitor Claude Code's local conversation files
 - [x] Real-time token tracking and carbon calculation
+- [x] Visual indicators for equivalent emissions
 - [ ] Support for different models (Sonnet, Opus, Haiku) with model-specific emission factors
 - [ ] Detect model type from conversation files
 - [ ] Export statistics to CSV/JSON
@@ -174,6 +177,10 @@ Users can adjust the emission factor in settings based on their preferred assump
 - GitHub greenscale-ai/genai-carbon-footprint. "GenAI Carbon Footprint Calculator." https://github.com/greenscale-ai/genai-carbon-footprint
 
 - Stanford CRFM. (2024). "Anthropic: Claude 3 - Foundation Model Transparency Index." https://crfm.stanford.edu/fmti/May-2024/company-reports/Anthropic_Claude%203.html
+
+## Acknowledgments
+
+This project builds upon the work of [Claude Code Usage Monitor](https://github.com/Maciek-roboblog/Claude-Code-Usage-Monitor) by Maciek-roboblog. The token calculation and file watching methodology were adapted from that project.
 
 ## Contributing
 

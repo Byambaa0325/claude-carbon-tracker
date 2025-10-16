@@ -2,12 +2,17 @@
   "name": "claude-carbon-tracker",
   "displayName": "Claude Carbon Tracker",
   "description": "Track and visualize carbon emissions from Claude Code AI usage with real-time monitoring",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "publisher": "claude-carbon-tracker-dev",
+  "icon": "resources/leaf128.png",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/claude-carbon-tracker"
+    "url": "https://github.com/Byambaa0325/claude-carbon-tracker"
   },
+  "bugs": {
+    "url": "https://github.com/Byambaa0325/claude-carbon-tracker/issues"
+  },
+  "homepage": "https://github.com/Byambaa0325/claude-carbon-tracker#readme",
   "keywords": [
     "claude",
     "carbon",
