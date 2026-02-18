@@ -1,9 +1,12 @@
 # Claude Carbon Tracker
 
 A VSCode extension to track and visualize carbon emissions from Claude Code AI usage.
+<img width="599" height="922" alt="image" src="https://github.com/user-attachments/assets/ad3eb774-5fd0-482b-ba15-9b853d25815f" />
 
 ## Features
+<img width="806" height="126" alt="image" src="https://github.com/user-attachments/assets/8f0fff96-b5b6-4e54-9209-92a8958b94bf" />
 
+https://marketplace.visualstudio.com/items?itemName=claude-carbon-tracker-dev.claude-carbon-tracker
 - **Real-time tracking** of carbon emissions from Claude Code usage
 - **Status bar widget** showing current CO₂ emissions
 - **Detailed statistics view** in the sidebar with:
