@@ -21,10 +21,22 @@ export class ClaudeDataMonitor {
     private processedMessages: Set<string> = new Set();
     private monitorInterval?: NodeJS.Timeout;
     private claudeDataPaths: string[];
+    private context: vscode.ExtensionContext;
 
-    constructor(carbonTracker: CarbonTracker) {
+    constructor(carbonTracker: CarbonTracker, context: vscode.ExtensionContext) {
         this.carbonTracker = carbonTracker;
+        this.context = context;
         this.claudeDataPaths = this.getClaudeDataPaths();
+        this.loadProcessedMessages();
+    }
+
+    private loadProcessedMessages() {
+        const saved = this.context.globalState.get<string[]>('processedMessages', []);
+        this.processedMessages = new Set(saved);
+    }
+
+    private async saveProcessedMessages() {
+        await this.context.globalState.update('processedMessages', Array.from(this.processedMessages));
     }
 
     private getClaudeDataPaths(): string[] {
@@ -120,6 +132,7 @@ export class ClaudeDataMonitor {
     private async parseAndTrackFile(filePath: string) {
         try {
             const messages = await this.parseSessionFile(filePath);
+            let newMessagesProcessed = false;
 
             for (const message of messages) {
                 // Skip if already processed
@@ -140,6 +153,12 @@ export class ClaudeDataMonitor {
 
                 // Mark as processed
                 this.processedMessages.add(message.id);
+                newMessagesProcessed = true;
+            }
+
+            // Save processed messages to storage if new ones were added
+            if (newMessagesProcessed) {
+                await this.saveProcessedMessages();
             }
         } catch (err) {
             console.warn(`Error parsing file ${filePath}:`, err);
