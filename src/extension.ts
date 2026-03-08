@@ -81,7 +81,7 @@ function updateStatusBar() {
 
 function startMonitoring(context: vscode.ExtensionContext) {
     // Initialize the Claude data monitor
-    dataMonitor = new ClaudeDataMonitor(carbonTracker);
+    dataMonitor = new ClaudeDataMonitor(carbonTracker, context);
 
     // Start monitoring Claude's JSONL files
     dataMonitor.start();
